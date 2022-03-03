@@ -19,18 +19,17 @@
 }
 </style>
 	
-<div id="cookies-message-container"><div id="cookies-message">Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej.<a onclick="WHCloseCookiesWindow();" id="accept-cookies-checkbox">Rozumiem</a></div></div>
+<div id="cookies-message">Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej.<a onclick="WHCloseCookiesWindow();" id="accept-cookies-checkbox">Rozumiem</a></div>
 
 <script>
 function WHCheckCookies(){
 	if(!localStorage.cookies_accepted) {
-		var cookies_message = document.getElementById("cookies-message");
-		cookies_message.style.display="block"
+		document.getElementById("cookies-message").style.display = "block"
 	} 
 }
 function WHCloseCookiesWindow(){
 	localStorage.cookies_accepted = true;
-	document.getElementById("cookies-message-container").removeChild(document.getElementById("cookies-message"));
+	document.getElementById("cookies-message").remove();
 }
 	
 window.onload = WHCheckCookies;
